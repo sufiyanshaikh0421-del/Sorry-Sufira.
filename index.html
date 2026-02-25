@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>I'm Sorry ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 50px;
+        }
+        p {
+            font-size: 22px;
+        }
+        .shayari {
+            margin-top: 20px;
+            font-style: italic;
+            font-size: 20px;
+            padding: 0 20px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        #yes {
+            background-color: #28a745;
+            color: white;
+        }
+        #no {
+            background-color: #dc3545;
+            color: white;
+            position: absolute;
+        }
+        .heart {
+            position: fixed;
+            top: -10px;
+            color: red;
+            font-size: 20px;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<audio autoplay loop>
+    <source src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav" type="audio/wav">
+</audio>
+
+<div class="container">
+    <h1>I'm Really Sorry 🥺</h1>
+    <p>Galti meri thi... par pyaar bhi sirf tumse hi hai, Sufira ❤️</p>
+    <p>Kya tum mujhe maaf karoge? ❤️</p>
+
+    <div class="shayari">
+        Tere pyaar ka kya hisaab du <br>
+        Teri mohabbat ko kya khitaab du..<br>
+        Koi acha sa phool hota toh tumhen jarur pesh karte...<br>
+        Magar jo khud hi gulaab ho usey kya gulaab du......
+    </div>
+
+    <button id="yes" onclick="love()">Haan ❤️</button>
+    <button id="no" onmouseover="moveButton()">Nahi 😒</button>
+</div>
+
+<script>
+    function love() {
+        document.body.innerHTML = "<h1>Thank You Sufira ❤️</h1><p>Promise karta hoon dobara aisa nahi hoga 💖</p>";
+        for(let i=0;i<50;i++){
+            createHeart();
+        }
+    }
+
+    function moveButton() {
+        var button = document.getElementById("no");
+        var x = Math.random() * (window.innerWidth - 100);
+        var y = Math.random() * (window.innerHeight - 50);
+        button.style.left = x + "px";
+        button.style.top = y + "px";
+    }
+
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+
+    setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
