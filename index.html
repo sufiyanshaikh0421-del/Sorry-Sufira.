@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sorry Sufira ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    text-align:center;
+    color:white;
+
+    background-image: url("https://i.imgur.com/8Km9tLL.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.overlay{
+    background: rgba(255, 105, 180, 0.7);
+    height: 100vh;
+}
+
+.screen{
+    display:none;
+    padding-top:120px;
+}
+
+h1{
+    font-size:60px;
+}
+
+p{
+    font-size:20px;
+    width:70%;
+    margin:auto;
+}
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    margin:10px;
+}
+
+.next{
+    background:white;
+    color:#ff1493;
+}
+
+.yes{
+    background:green;
+    color:white;
+}
+
+.no{
+    background:red;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<!-- Screen 1 -->
+<div id="screen1" class="screen" style="display:block;">
+    <h1>SORRY ❤️</h1>
+    <button class="next" onclick="nextScreen()">Next</button>
+</div>
+
+<!-- Screen 2 -->
+<div id="screen2" class="screen">
+    <h1>Maaf karogi Sufira? 🥺</h1>
+
+    <p>
+    Tere pyaar ka kya hisaab du <br>
+    Teri mohabbat ko kya khitaab du..<br><br>
+    Koi acha sa phool hota toh Tumhen jarur pesh karte...<br>
+    Magar jo khud hi gulaab ho usey kya Gulaab du......
+    </p>
+
+    <br>
+
+    <button class="yes" onclick="yes()">Haan ❤️</button>
+    <button class="no" onclick="no()">Nahi 😒</button>
+</div>
+
+</div>
+
+<script>
+function nextScreen(){
+    document.getElementById("screen1").style.display="none";
+    document.getElementById("screen2").style.display="block";
+}
+
+function yes(){
+    alert("Yayyyy 😍 I Love You Sufira ❤️");
+}
+
+function no(){
+    alert("Please soch lo phir se 🥺💔");
+}
+</script>
+
+</body>
+</html>
